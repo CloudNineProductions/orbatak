@@ -1,0 +1,15 @@
+
+RewriteEngine On
+
+RewriteRule ^contact/$ /contact/contact.php
+RewriteRule ^contact$ /contact/ [R=301]
+RewriteRule ^contact/thanks/$ /contact/contact.php?status=thanks
+RewriteRule ^contact/thanks$ /contact/thanks/ [R=301]
+
+RewriteRule ^music/$ /music/music.php
+RewriteRule ^music$ /music/ [R=301]
+
+
+
+RewriteRule ^about/$ /about/about.php
+RewriteRule ^about$ /about/ [R=301]

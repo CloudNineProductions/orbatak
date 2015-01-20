@@ -1,0 +1,396 @@
+
+/********** Zero our values to start with a clean space **********/
+html {
+	cursor: 0;
+}
+
+/********** Set the Background Texture **********/
+body {
+	background-color: black;
+	background-image: url("../img/concrete.jpg");
+	border:0;
+	padding:0;
+	margin:0;
+	height: 100%;
+}
+
+/********** Set Container to fill the entire screen area  **********/
+#container { min-height: 100%; position: relative; height: 100%;}
+
+/********** Set Content area padding to give room for the footer **********/
+#content {  padding-bottom: 60px; margin: 0;}
+
+/********** Main Header Styling **********/
+h1 {
+	color:  hsl(0,0%,80%);
+	font-family: 'Audiowide', cursive;
+	font-size: 4vw;
+}
+
+/********** 2nd Header Styling **********/
+h2 {
+	color:  hsl(0,0%,70%);
+	background-color: hsla(0,0%,10%, .8);
+	max-width: 400px;
+	padding: 5px 0;
+	margin: 0;
+	background-clip: padding-box;
+	text-align: center;
+	font-family: 'Audiowide', cursive;
+	font-size: 3vw;
+}
+
+/********** 3rd Header Styling **********/
+h3 { color:  hsl(0,0%,80%);
+	background-color: hsl(0,0%,10%);
+	max-width: 300px;
+	background-clip: padding-box;
+	margin: 0 auto;
+	padding: 5px 5px;
+	text-align: center;
+	font-family: 'Dosis', sans-serif;
+	font-size: 2vw;
+	border-radius: 15px;
+}
+
+/********** Base styling for links **********/
+a { 
+	color: hsl(0,0%,80%);
+	text-decoration: none; 
+	font-family: 'Audiowide', sans-serif, monospace;	
+}
+
+/********** Base color for visited links **********/
+a:visited {
+	color:  hsl(0,0%,60%);
+}
+
+/********** Color for labels **********/
+label { color: hsl(0,0%,80%);}
+
+
+
+/********** Header Styling **********/
+.header {
+	margin: 0;	
+	padding:0;
+}
+
+/********** Banner Styling **********/
+.banner-img {
+	margin-bottom:-5px;
+	height: 15%;
+	width:100%;
+}
+
+/********** Navigation Styling **********/
+.nav {
+	position: relative;
+	z-index: 20;
+	margin: 0;
+	min-height: 20px;
+	height: 20%;
+	text-align: center;
+	font-size: 0;
+}
+
+/********** Navigation Links Styling **********/
+.nav a {
+	display:block-inline;
+	color:  hsl(0,0%,80%);
+	background-color: hsl(180, 10%, 10%);
+	text-decoration: none; 
+	padding: 0 10px;
+	width: 20%;
+	border-radius: 20px 15px 0 0;
+	margin: 0;
+	font-family: 'Audiowide', cursive;
+	font-size: 20px;
+	font-size: 5vw;
+	text-shadow: 3px 3px 5px rgb(0,0,0);
+	-webkit-transition: background-color 0.6s ease-in-out, color 0.6s ease-in-out;
+	-moz-transition: background-color 0.6s ease-in-out, color 0.6s ease-in-out;
+	-o-transition: background-color 0.6s ease-in-out, color 0.6s ease-in-out;
+	transition: background-color 0.6s ease-in-out, color 0.6s ease-in-out;
+}
+
+/********** Navigation links transition values for mouse hover **********/
+.nav a:hover {
+	background-color: hsla(200, 10%, 5%, .5);
+	color: hsl(0,0%,50%); 
+}
+
+
+/********** Addresses Orange line from the 
+			SoundCloud audio player widget and creates 
+			a visual break between the header and content area **********/
+.nav p { 
+	position: relative;
+	z-index: 30;
+	margin:-5px 0 0 0;
+	padding:0;
+	background-color: hsl(180, 10%, 10%); 
+	height: 5px;
+}
+
+/********** Hides Orange strip on SoundCloud audio player 
+			under the <.nav p> box **********/
+.audioPlayer iframe {
+	position: relative;
+	z-index: 5;
+	margin-top: -5px;
+}
+
+
+/********** Styling to indicate which Main Navigation Tab the user has selected **********/
+a.musicOn { color: hsl(0,0%,20%); opacity: .8; pointer-events: none; }
+a.contactOn { color: hsl(0,0%,20%); opacity: .8; pointer-events: none; }
+a.aboutOn { color: hsl(0,0%,20%); opacity: .8; pointer-events: none; }
+
+
+/********** Aligns Track icons to the center  **********/
+.trackIconContainer { text-align: center; }
+
+/********** Makes the <.trackIcon img> and <.trackIconTitle> position
+			relative to the their container box **********/
+div.trackIcon { 
+	position:relative; 
+	height: 150px; 
+	margin: 15px; 
+	padding: 0;
+}
+
+/********** Track icon styling **********/
+.trackIcon, .trackIconTitle {
+	display:inline-block;
+	width: 150px;
+	max-width: 150px;
+	background-clip: padding-box;
+}
+
+/********** Track icon Image styling **********/
+.trackIcon img {
+	position: absolute;
+	left: 0;
+	z-index: 6;
+	pointer-events: none;
+	border-radius: 15px;
+	width: 150px;
+	-webkit-transition: transform 0.6s;
+	transition: transform 0.6s;
+}
+
+/********** Track icon image transition **********/
+div.trackIcon:hover img {
+	border-radius: 15px;
+	width: 150px;
+	transform: scale(1.1, 1.1);
+}
+
+/********** Track icon trasition for Title when image is hovered over**********/
+div.trackIcon:hover a.trackIconTitle {
+	border-radius: 15px;
+	width: 150px;
+	transform: translate(0, -100px);
+}
+
+/********** Track icon title styling **********/
+.trackIconTitle {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	position: absolute;
+	left: 0;
+	z-index: 6;
+	background-color: hsl(0, 0%, 20%);
+	border-radius: 15px;
+	padding: 10px 0;
+	width: 150px;
+	height: 100px; 
+	color: hsl(0,0%,80%); 
+	transition: -webkit-transform 0.6s cubic-bezier(.5, -.5, .1, 1.3), color 0.6s ease-in-out; 
+	transition: transform 0.6s cubic-bezier(.5, -.5, .1, 1.3), color 0.6s ease-in-out;
+}
+
+
+
+/********** About page Bio. and artist portrait Styling **********/
+.bioImageContainer { text-align:center; }
+.bioImage {	display:inline-block; margin-top: 40px; }	
+.bioImage img {
+	margin-left: auto;
+    margin-right: auto;
+    min-width: 100px;
+	width: 20vw;
+	border-radius: 50%;	
+}
+/************ Bio text  styling*/
+.bio {
+	background-color: hsl(0,0%,20%);
+	border-radius: 20px;
+	padding: 5px 30px;
+	margin: auto;
+	max-width: 600px;
+	text-shadow: 3px 3px 5px #000;
+	font-family: 'Dosis', sans-serif;
+	color: hsl(0,0%,40%);
+}
+.bio p { font-size: 2vw; color: hsl(0,0%,80%); }
+.bioImage h3 { font-size: 3vw; min-width: 50px; }
+
+/**************** Email Contact Form  Styling*/
+form {width: 375px; margin: 34px auto; background: hsl(0,0%,15%); }
+form table {width: 375px; margin-bottom: 16px; border-radius: 15px;}
+form th {  /* Spacing for the form labels */
+    width: 80px;
+    vertical-align: middle;
+    padding: 3px;
+}
+form td {/* Spacing for the form data */
+    padding: 15px;
+	padding-left: 5px;
+}
+form td select,
+form td input,
+form td textarea {
+    width: 100%;
+}
+
+form input[type="submit"] {	/* Styling for Submit button */
+    width: 375px;
+    text-align: center;
+    border: 1px solid black;
+	border-radius: 15px;
+    background: Grey;
+    color: Linen;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;    
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 14px;
+	-webkit-transition: text-shadow 1s, background-color 1s;
+	transition: text-shadow 1s, background-color 1s;
+}
+
+/* Styling for Submit button  on Hover*/ 
+form input[type="submit"]:hover {
+	text-shadow: 0 0 2px hsl(30,50%,30%);
+	background-color: hsl(0,0%,30%);
+}
+
+/* Styling for the Error Messages displayed  when email form can not validate user input  */
+p.error-message {
+	padding: 10px;
+	max-width: 300px;
+	margin: 0 auto;
+	color:  hsl(0,0%,80%);
+	background-color: hsl(0,20%,40%);
+	border: solid hsl(0,20%,20%);
+	border-radius: 15px;
+}
+
+
+/********** Footer styling  **********/
+.footer {
+	position: absolute;
+	bottom: 0;
+	margin: 20px 0 0 0;
+	width: 100%;
+	height: 60px; 
+	color:  hsl(0,0%,80%);
+	text-align: center;	
+	background-color: hsl(0,0%, 0%);
+}
+
+/**********  Footer links styling**********/
+.footer a {
+	text-decoration: none;
+	margin: 0 auto;
+	color: Linen;
+	text-align: center;	
+	font-size: 20px;
+	-webkit-transition: color 1s;
+	transition: color 1s;
+}
+
+/**********  Footer links styling for mouse hover**********/
+.footer a:hover {
+	color:  hsl(0,0%,60%);
+	
+}
+
+/********** Footer list item styling **********/
+.footer li {
+	display:inline-block;
+	text-decoration: none;
+}
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
+	.bio p { font-size: 3vw;  }
+	.bioImage h3 { font-size: 4vw; }
+	.nav a { font-size: 6vw; }
+}
+
+@media screen and (max-width: 480px) {
+	.bio p { font-size: 6vw; }
+	.bioImage h3 { font-size: 5vw; }
+	.nav a { font-size: 7vw; }
+	iframe { height: 40%; }	/* for SoundCloud embedded audio player **********/
+	
+}
+
+@media screen and (max-width: 374px) {
+	
+	.nav a { font-size: 6vw; }
+	
+	/*  for trackIcon image gallery*/
+	div.trackIcon { height: 80px; margin: 8px; }
+
+	/********** Track icon styling **********/
+	.trackIcon, .trackIconTitle {width:80px;}
+
+	/********** Track icon Image styling **********/
+	.trackIcon img {
+		border-radius: 8px;
+		width: 80px;
+	}
+
+	/********** Track icon image transition **********/
+	div.trackIcon:hover img {
+		border-radius: 8px;
+		width: 80px;
+		transform: scale(1.1, 1.1);
+	}
+
+	/********** Track icon trasition for Title when image is hovered over**********/
+	div.trackIcon:hover a.trackIconTitle {
+		width: 80px;
+		font-size: 10px;
+		font-size: 3vw;
+		transform: translate(0, -60px);
+	}
+
+	/********** Track icon title styling **********/
+	.trackIconTitle {
+		border-radius: 8px;
+		padding: 10px 0;
+		height: 50px; 
+		width: 80px;
+		font-size: 10px;
+		font-size: 3vw;
+		transition: -webkit-transform 0.6s cubic-bezier(.5, -.5, .1, 1.3), color 0.6s ease-in-out; 
+		transition: transform 0.6s cubic-bezier(.5, -.5, .1, 1.3), color 0.6s ease-in-out;
+	}
+	
+}
+
+@media print {
+	* {
+		background: transparent !important;
+		color: #000 !important;
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
+	
+	.footer, .header { display: none; }
+
+}
