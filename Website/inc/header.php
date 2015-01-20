@@ -14,6 +14,7 @@
 		<link rel="icon" href="/favicon.ico" type="image/x-icon">
 		<link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>css/style1.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>css/style_media_query.css">
 	</head>
 
 	<body>

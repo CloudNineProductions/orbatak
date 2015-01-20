@@ -1,18 +1,26 @@
 <div class="bioImageContainer">
 	<div class="bioImage">
-		<a href="#"><img src="<?php echo BASE_URL; ?>img/kaylan.jpg" alt="Portrait of Dirty Taktics"></img></a>
-		<h3>Kaylan (DirtyTactix) Barratt</h3>
-	
-	</div>
+		<a><img src="<?php echo BASE_URL; ?>img/kaylan.jpg" alt="Portrait of Dirty Taktics"></img></a>
+		<h3>DirtyTactix</h3>
+		<h4>Kaylan Barratt</h4>
+		<a href="https://soundcloud.com/dirtytactix" target="_blank"><img id="social" src="<?php echo BASE_URL; ?>img/soundcloud.jpg"></img></a>
+		<a href="https://www.facebook.com/dirtytactix?fref=ts" target="_blank"><img id="social" src="<?php echo BASE_URL; ?>img/facebook.png"></img></a>
+		<a href="http://www.beatport.com/artist/dirty-tactix/265680" target="_blank"><img id="social" src="<?php echo BASE_URL; ?>img/beatport.jpg"></img></a>
+	</div>	
+		
 	<div class="bioImage">
-		<a href="#"><img src="<?php echo BASE_URL; ?>img/levi.jpg" alt="Portrait of L Nix" img></img></a>
-		<h3>Levi (L NIX) Nicol</h3>
+		<a><img src="<?php echo BASE_URL; ?>img/levi.jpg" alt="Portrait of L Nix" img></img></a>
+		<h3>L NIX</h3>
+		<h4>Levi Nicoll</h4>
+		<a href="https://soundcloud.com/lnix" target="_blank"><img id="social"  src="<?php echo BASE_URL; ?>img/soundcloud.jpg"></img></a>
+		<a href="https://www.facebook.com/LNix.dubstep?fref=ts&ref=br_tf" target="_blank"><img id="social" src="<?php echo BASE_URL; ?>img/facebook.png"></img></a>
+		<a href="http://www.beatport.com/artist/l-nix/224959" target="_blank"><img id="social" src="<?php echo BASE_URL; ?>img/beatport.jpg"></img></a>
 	</div>	
 </div>
 
 <div class="bio">
 
-	<p>Canadian Dubstep duo, Orbatak, consists of ex-Jungle and D&amp;B DJ/Producers,Dirty Tactix and L-Nix.They have released, 
+	<p>Canadian Dubstep duo, Orbatak, consists of Junglists and EDM DJ/Producers, Dirty Tactix and L-Nix. They have released, 
 to date, tracks on Badman digital, Bass Punch Records, BetaMorph Records, Stop/Start Records, FoulplayDubstep and 
 Dubstep Division Records and have remixed tracks for Envy(Num. 5 on the UK HipHop charts), Spektrum(UK), Heavy Deviance (UK),
 Mark Instinct and Don Goliath which have been well received by DJs and punters alike.

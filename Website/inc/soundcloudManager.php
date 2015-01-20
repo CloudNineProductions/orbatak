@@ -16,11 +16,54 @@ require(ROOT_PATH."Soundcloud.php");
 
 	$soundcloud = new Services_Soundcloud(getClientID(), getClientSecret());
 	
-	// __ Betamorph Recordings, DIRTY TACTIX,Snatchy Trax ,L Nix, Really Good Recordings
 
 
+function getFilteredTracks ($tracks, $length, $keyWords=array(), $start=0,$mostRecent=true) {
+	$product= array();
+	$index=0;
+	$idList= "";
+	foreach ($tracks as $track){
+		if ($index >= $start AND ($index < $length + $start)) {
+			if (!empty($keyWords)){
+				
+				foreach ($keyWords as $keyWord) {	
+					if (strripos($track->tag_list, $keyWord)!== false) {
+						$product[]=$track;	
+					}
+				}	
+			}
+			else {
+				if ($mostRecent){
+					$product[]=$track;
+				}
+				else {
+					$product[0]=$track;
+				}
+			}
+			
+		}
+		$index++;
+	}
+	
+	return $product;
+	
+}
+
+//  Removes Duplicate Tracks from an array based on track->id
+function removeDuplicates ($trackList) {
+	$product = array();
+	$idList = "";
+	foreach ($trackList as $track) {
+		$trackID = $track->id;
+		if (strripos($idList, (string)$trackID) === false){
+			$product[]=$track;
+			$idList = $idList.$track->id;
+		}
+	}
+	return $product;
+}	
+	
 function getTrackList ($artist, $clientID) {
-
 	
 	// Gets track list from specific SoundCloud user
 
@@ -42,7 +85,6 @@ function getTrackList ($artist, $clientID) {
 	 
 	$tracks_json = file_get_contents($soundcloud_url);
 	$tracks = json_decode($tracks_json);
-
 
 	return $tracks;
 }

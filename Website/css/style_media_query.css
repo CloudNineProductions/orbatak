@@ -1,0 +1,75 @@
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
+	.bio p { font-size: 3vw;  }
+	.bioImage h3 { font-size: 4vw; }
+	.nav a { font-size: 6vw; padding-left: 7px; padding-right: 7px; }
+}
+
+@media screen and (max-width: 480px) {
+	.bio p { font-size: 6vw; }
+	.bioImage h3 { font-size: 5vw; }
+	.nav a { font-size: 7vw; padding-left: 5px; padding-right: 5px; border-radius: 10px 10px 0 0; }
+	iframe { height: 40%; }	/* for SoundCloud embedded audio player **********/
+	
+}
+
+@media screen and (max-width: 374px) {
+	
+	.nav a { 
+		font-size: 6vw; 
+		width: 30%; 
+		border-radius: 5px 5px 0 0;
+	}
+	
+	/*  for trackIcon image gallery*/
+	div.trackIcon { height: 80px; margin: 8px; }
+
+	/********** Track icon styling **********/
+	.trackIcon, .trackIconTitle {width:80px;}
+
+	/********** Track icon Image styling **********/
+	.trackIcon img {
+		border-radius: 8px;
+		width: 80px;
+	}
+
+	/********** Track icon image transition **********/
+	div.trackIcon:hover img {
+		border-radius: 8px;
+		width: 80px;
+		transform: scale(1.1, 1.1);
+	}
+
+	/********** Track icon trasition for Title when image is hovered over**********/
+	div.trackIcon:hover a.trackIconTitle {
+		width: 80px;
+		font-size: 10px;
+		font-size: 3vw;
+		transform: translate(0, -60px);
+	}
+
+	/********** Track icon title styling **********/
+	.trackIconTitle {
+		border-radius: 8px;
+		padding: 10px 0;
+		height: 50px; 
+		width: 80px;
+		font-size: 10px;
+		font-size: 3vw;
+		transition: -webkit-transform 0.6s cubic-bezier(.5, -.5, .1, 1.3), color 0.6s ease-in-out; 
+		transition: transform 0.6s cubic-bezier(.5, -.5, .1, 1.3), color 0.6s ease-in-out;
+	}
+	
+}
+
+@media print {
+	* {
+		background: transparent !important;
+		color: #000 !important;
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
+	
+	.footer, .header { display: none; }
+
+}
