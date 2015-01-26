@@ -3,20 +3,25 @@
 	// Includes the Configuration file with  Constants  ROOT_PATH and BASE_URL 
 	// which point to the servers root path and the website root directory, 
 	require_once("../inc/config.php");
-
+	require_once("../inc/database.php");
+	require_once(ROOT_PATH . "inc/mailer.php");
+	
 	$pageTitle = "Contact Orbatak";
 	$section = "contact";
-	include(ROOT_PATH . "inc/mailer.html.php");
-	include(ROOT_PATH . "inc/header.php");
 	
+	include(ROOT_PATH . "inc/header.php");
+
 ?>
 	<h2  class="branding-title" align="center"> <?php echo $pageTitle; ?> </h2>
 			<div class = "wrapper">
 				<div class="emailForm">
 				<?php if (isset($_GET["status"]) AND $_GET["status"]=="thanks"){ ?>
 				
-					<p align ="center">Thanks for the email, I'll be in touch promptly</p>
-				
+					<h3 align ="center">Thanks for the email, We&rsquo;ll be in touch promptly</h3>
+					<br>
+					<br>
+					<br>
+					
 				<?php } else { ?>
 					
 					<?php 
@@ -27,7 +32,7 @@
 						echo '<h3>We&rsquo;d love to hear from you!</h3>';
 					}
 					?>
-					<form method ="post" action="<?php echo BASE_URL.'contact/'; ?>">
+					<form method="post" action="<?php echo BASE_URL.'contact/'; ?>">
 						
 						<table>
 							<tr>
@@ -56,6 +61,15 @@
 									<textarea name="message" id="message" rows=3 
 										><?php if(isset($message)) {echo htmlspecialchars($message);} ?></textarea> 
 										
+								</td>
+							</tr>
+							<tr>
+								<th>
+									<label for="subscribe">Subscribe</label>
+								</th>
+								<td >
+									<input type="checkbox" name="subscribe" id="subscribe" value="Yes">
+				
 								</td>
 							</tr>
 							<tr style="display: none">

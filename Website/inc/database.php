@@ -85,7 +85,7 @@ function populateDatabase($users,$serverName,$databaseName,$userName,$password){
 	$db = null;
 }	
 
-//populateDatabase($soundCloudUsers, $servername, $dbname, $username,$adminPassword);	   
+//!!THIS MODIFIES A DATABASE!!! populateDatabase($soundCloudUsers, $servername, $dbname, $username,$adminPassword);	   
 	
 	
 	
@@ -96,6 +96,8 @@ function getTracksFromDB ($serverName,$databaseName,$userName,$password, $order=
 
 		// set the PDO error mode to exception
 		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		
+		
 		//Set the order as either 'ASC' or 'DESC' for ascending or descending
 		if ($order!="") { $order = " ORDER BY last_modified ".$order; }
 		$stmt = $db->prepare("SELECT title, id, artwork_url, description FROM tracks".$order); 
@@ -113,6 +115,30 @@ function getTracksFromDB ($serverName,$databaseName,$userName,$password, $order=
 	
 	return $result	;
 }
-		   
 
+
+// Adds a name and email to the database
+function addToEmailList ($name, $email, $serverName,$databaseName,$userName,$password) {
 	
+	try {
+		$db = new PDO("mysql:host=$serverName;dbname=$databaseName", $userName, $password);
+		// set the PDO error mode to exception
+		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		
+		// Filters Input for harmful code
+		$filtered_name = htmlspecialchars($name);
+		$filtered_email= htmlspecialchars($email);
+		
+		
+		$stmt = $db->prepare("INSERT INTO email_list (name, email) 
+					VALUES ('$filtered_name','$filtered_email');");
+
+		$stmt->execute();
+	}
+	catch (PDOException $e) {
+		echo "<p>Error: $e</p>";
+	}
+}
+
+//!!THIS MODIFIES A DATABASE!!! addToEmailList("bob","bob@email.com", $servername, $dbname, $username,$adminPassword);
+

@@ -22,7 +22,7 @@
 			<div class="header" > 
 				<a href="<?php echo BASE_URL; ?>">
 					<image class="banner-img" src="<?php echo BASE_URL; ?>
-						img/banner-logo.png" alt="Metalic letters spelling Orbatak"></image>
+						img/gasmask-banner.jpg" alt="Metalic letters spelling Orbatak"></image>
 				</a>
 				<div class="nav">
 					<a class="music<?php if ($section == "music"){echo "On";} ?>" href="<?php echo BASE_URL; ?>music/">Music</a>

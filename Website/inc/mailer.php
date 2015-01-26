@@ -10,6 +10,9 @@
 		$name = trim($_POST["name"]);
 		$email = trim($_POST["email"]);
 		$message = trim($_POST["message"]);
+		$subscribe = trim($_POST["subscribe"]);
+		
+		
 	
 		// Check if the name field has been set by the user
 		if($name==""){
@@ -59,6 +62,14 @@
 				//Set error message
 				$errorMsg = 'Sorry we can&#39;t find that email address any where on the whole internet.';
 			}
+			else {
+				// Check if subscribed check box returns 'Yes'
+				if ($subscribe == 'Yes') {
+					// send email and name to database
+					addToEmailList($name, $email, $servername, $dbname, $username,$adminPassword);
+				}
+				
+			}
 		}
 		
 		// Checks if any error messages have been set off by the form
@@ -84,8 +95,7 @@
 			
 			// Check if the send worked
 			if ($mail->Send()){
-			
-		
+				echo "Email Sent!";
 				// It worked!  redirect to the Thank You page
 				header("Location: " . BASE_URL . "contact/thanks/");
 				exit;

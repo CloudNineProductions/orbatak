@@ -51,22 +51,21 @@ h3 { color:  hsl(0,0%,80%);
 	text-align: center;
 	font-family: 'Dosis', sans-serif;
 	font-size: 2vw;
-	border-radius: 15px 15px 0 0;
+	border-radius: 10px;
 }
 
 /********** 4th Header Styling **********/
 h4 { 
 	display: block-inline;
-	color:  hsl(0,0%,60%);
-	background-color: hsl(0,0%,7%);
+	color:  hsl(0,0%,80%);
+	background-color: hsl(0,0%,10%);
 	max-width: 200px;
 	background-clip: padding-box;
 	margin: 0 auto;
 	padding: 5px 5px;
 	text-align: center;
 	font-family: 'Dosis', sans-serif;
-	font-size: 2vw;
-	border-radius: 0 0 15px 15px;
+	border-radius: 10px;
 }
 
 /********** Base styling for links **********/
@@ -108,6 +107,7 @@ label { color: hsl(0,0%,80%);}
 	height: 20%;
 	text-align: center;
 	font-size: 0;
+	background-color: hsla(0,0%,15%,.5);
 }
 
 /********** Navigation Links Styling **********/
@@ -242,7 +242,14 @@ div.trackIcon:hover a.trackIconTitle {
 	width: 20vw;
 	border-radius: 50%;	 
 }
-.bioImage h3 { font-size: 3vw; }
+.bioImage h3 { font-size: 3vw;  border-radius: 15px 15px 0 0; }
+
+.bioImage h4 { 
+	color:  hsl(0,0%,60%); 
+	background-color: hsl(0,0%,7%);
+	font-size: 2vw; 
+	border-radius: 0 0 15px 15px; 
+}
 
 /************ Bio text  styling*/
 .bio {
@@ -298,6 +305,8 @@ form input[type="submit"]:hover {
 	text-shadow: 0 0 2px hsl(30,50%,30%);
 	background-color: hsl(0,0%,30%);
 }
+
+#subscribe { width: auto; }
 
 /* Styling for the Error Messages displayed  when email form can not validate user input  */
 p.error-message {
